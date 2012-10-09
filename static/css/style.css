@@ -1,0 +1,43 @@
+/******************************************************************************\
+ * style.css                                                                  *
+ * -------------------------------------------------------------------------- *
+ * CSS for Bethany's pages                                                    *
+\******************************************************************************/
+body, html{
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+a{
+}
+a:hover{
+}
+pre{
+}
+.clear{
+    clear:both;
+}
+
+/******************************************************************************\
+ * Page Layout Organization                                                   *
+\******************************************************************************/
+#site_container{
+    min-height: 100%;
+    position: relative;
+}
+#logo_wrapper{
+}
+    #top_black_box{
+    }
+    #bethany_logo{
+    }
+#footer_wrapper{
+    border-top: 3px solid rgba(158,151,194,.6);
+    bottom: 0;
+    font-size: .8em;
+    height: 43px;
+    margin: 0;
+    position: absolute;
+    text-align: right;
+    width: 100%;
+}
