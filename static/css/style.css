@@ -134,6 +134,11 @@ pre{
         margin-left: 10px;
         background-color: black;
     }
+        .home_category hr{
+            color: #962f92;
+            background-color: #962f92;
+            height: 2px;
+        }
         .category_title{
             width: 90%;
             height: 10%;
@@ -169,6 +174,9 @@ pre{
     }
         #catalogs_title{
             font-size: 5.4em;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            -moz-text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            -webkit-text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
         }
         #catalogs_content_one{
         }
@@ -177,6 +185,8 @@ pre{
     #category_education_materials{
     }
         #education_materials_title{
+            font-size: 2.84em;
+            top: 4% !important;
         }
         #education_materials_content_one{
         }
@@ -185,6 +195,8 @@ pre{
     #category_website_designs{
     }
         #website_designs_title{
+            font-size: 3.3em;
+            top: 3% !important;
         }
         #website_designs_content_one{
         }
@@ -193,6 +205,10 @@ pre{
     #category_logos{
     }
         #logos_title{
+            font-size: 5em;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            -moz-text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            -webkit-text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
         }
         #logos_content_one{
         }
@@ -201,6 +217,7 @@ pre{
     #category_alpha_phi{
     }
         #alpha_phi_title{
+            font-size: 4.8em;
         }
         #alpha_phi_content_one{
         }
