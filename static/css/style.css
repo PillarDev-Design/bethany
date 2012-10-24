@@ -19,7 +19,7 @@ pre{
 }
 
 /******************************************************************************\
- * Page Layout Organization                                                   *
+ * base.html                                                                  *
 \******************************************************************************/
 #site_container{
     min-height: 100%;
@@ -28,12 +28,25 @@ pre{
 #logo_wrapper{
 }
     #top_black_box{
+        width: 100%;
+        height: 100px;
+        position: relative;
+        background-color: black;
+        border-bottom: 3px solid rgba(158,151,194,.6);
     }
-    #bethany_logo{
+    #bethany_logo_container{
+        background: url(../img/logo_resized.png) no-repeat;
+        position: relative;
+        height: 89px;
+        width: 353px;
+        top: 5px;
+        left: 5px;
     }
 #footer_wrapper{
+    background-color: black;
     border-top: 3px solid rgba(158,151,194,.6);
     bottom: 0;
+    color: white;
     font-size: .8em;
     height: 43px;
     margin: 0;
@@ -41,3 +54,60 @@ pre{
     text-align: right;
     width: 100%;
 }
+/******************************************************************************\
+ * home.html                                                                  *
+\******************************************************************************/
+#home_nav_box_container{
+
+}
+    #home_nav_button_container{
+    }
+        .home_nav_button{
+            position: relative;
+            float: right;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding-left: 5px;
+            padding-right: 5px;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            font-size: 1.2em;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+        }
+        .home_nav_active{
+            color: white;
+            background-color: black;
+            box-shadow: 0px 15px 1px black;
+            -moz-box-shadow: 0px 15px 1px black;
+            -webkit-box-shadow: 0px 15px 1px black;
+        }
+        .home_nav_inactive{
+            color: black;
+            background-color: white;
+        }
+        #home_nav_home{
+        }
+        #home_nav_about{
+        }
+        #home_nav_resume{
+        }
+        #home_nav_contact{
+        }
+    #home_nav_content_container{
+        height: 300px;
+        position: relative;
+        top: 5px;
+        background-color: black;
+    }
+        #home_nav_content{
+            position: relative;
+            width: 95%;
+            height: 95%;
+            background-color: white;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+
+        }
