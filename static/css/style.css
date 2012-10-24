@@ -104,12 +104,105 @@ pre{
     }
         #home_nav_content{
             position: relative;
-            width: 98%;
-            height: 95%;
+            width: 96%;
+            height: 86%;
             background-color: white;
             border-radius: 5px;
             -moz-border-radius: 5px;
             -webkit-border-radius: 5px;
             left: 1%;
             top: 2%;
+            padding: 15px;
+        }
+#home_category_container{
+    position: relative;
+    top: 5px;
+    height: 1900px;
+
+}
+    .home_category{
+        float: left;
+        position: relative;
+        width: 32%;
+        height: 900px;
+        border: 1px solid black;
+        border-radius: 40px;
+        -moz-border-radius: 40px;
+        -webkit-border-radius: 40px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 10px;
+        background-color: black;
+    }
+        .category_title{
+            width: 90%;
+            height: 10%;
+            text-align: center;
+            position: relative;
+            left: 5%;
+            top: 1%;
+            color: white;
+        }
+        .category_content{
+            position: relative;
+            width: 96%;
+            height: 42%;
+            border: 1px solid black;
+            border-radius: 20px;
+            -moz-border-radius: 20px;
+            -webkit-border-radius: 20px;
+            overflow: hidden;
+            left: 2%;
+            margin-bottom: 10px;
+            background-color: white;
+        }
+    #category_freelance{
+    }
+        #freelance_title{
+            font-size: 5.7em;
+        }
+        #freelance_content_one{
+        }
+        #freelance_content_two{
+        }
+    #category_catalogs{
+    }
+        #catalogs_title{
+            font-size: 5.4em;
+        }
+        #catalogs_content_one{
+        }
+        #catalogs_content_two{
+        }
+    #category_education_materials{
+    }
+        #education_materials_title{
+        }
+        #education_materials_content_one{
+        }
+        #education_materials_content_two{
+        }
+    #category_website_designs{
+    }
+        #website_designs_title{
+        }
+        #website_designs_content_one{
+        }
+        #website_designs_content_two{
+        }
+    #category_logos{
+    }
+        #logos_title{
+        }
+        #logos_content_one{
+        }
+        #logos_content_two{
+        }
+    #category_alpha_phi{
+    }
+        #alpha_phi_title{
+        }
+        #alpha_phi_content_one{
+        }
+        #alpha_phi_content_two{
         }
