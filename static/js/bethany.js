@@ -19,156 +19,103 @@ function centralInit(){
     homeNavBoxEvents();
 }
 //============================================\\
+// switchTabs                                 \\
+//============================================\\
+function switchTabs(tabName, newContent){
+    var activateArray = [];
+    var deactivateArray = ['home_nav_home', 'home_nav_about', 'home_nav_resume', 'home_nav_contact'];
+
+    if(tabName === 'home_nav_home'){
+        activateArray.push('home_nav_home');
+        deactivateArray.pop('home_nav_home');
+    }else if(tabName === 'home_nav_about'){
+        activateArray.push('home_nav_about');
+        deactivateArray.pop('home_nav_about');
+    }else if(tabName === 'home_nav_resume'){
+        activateArray.push('home_nav_resume');
+        deactivateArray.pop('home_nav_resume');
+    }else if(tabName === 'home_nav_contact'){
+        activateArray.push('home_nav_contact');
+        deactivateArray.pop('home_nav_contact');
+    }
+    
+    // Activate
+    var activateLength = activateArray.length;
+    for(var i=0; i<activateLength; i++){
+        if($(activateArray[i]).hasClass('home_nav_inactive')){
+            $(activateArray[i]).removeClass('home_nav_inactive');
+            $(activateArray[i]).addClass('home_nav_active');
+        }
+    }
+
+    // Deactivate
+    var deactivateLength = deactivateArray.length;
+    for(var i=0; i<deactivateLength; i++){
+        if($(deactivateArray[i]).hasClass('home_nav_active')){
+            $(deactivateArray[i]).removeClass('home_nav_active');
+            $(deactivateArray[i]).addClass('home_nav_inactive');
+        }
+    }
+
+    // Initial Fade
+    $('home_nav_content').set('tween', { duration: 500 }).fade('out');
+
+    // Replace Content and Fade back on a timer.
+    setTimeout(function(){
+        // Replace Content
+        $('home_nav_content').innerHTML = newContent;
+
+        // Fade back in
+        $('home_nav_content').set('tween', { duration: 500 }).fade('in'); 
+    }, 500);
+}
+//============================================\\
 // homeNavBoxEvents                           \\
 //============================================\\
 function homeNavBoxEvents(){
+    var replacementContent = "";
+
     /**************************************************************************\
      * HOME                                                                   *
     \**************************************************************************/
     $('home_nav_home').addEvent('click', function(){
-        //====================================================================\\
-        // Adjust Tab Classes                                                 \\
-        //====================================================================\\
-        if($('home_nav_home').hasClass('home_nav_active')){
-        }else{
-            $('home_nav_home').removeClass('home_nav_inactive');
-            $('home_nav_home').addClass('home_nav_active');
-            if($('home_nav_about').hasClass('home_nav_active')){
-                $('home_nav_about').removeClass('home_nav_active');
-                $('home_nav_about').addClass('home_nav_inactive');
-            }
-            if($('home_nav_resume').hasClass('home_nav_active')){
-                $('home_nav_resume').removeClass('home_nav_active');
-                $('home_nav_resume').addClass('home_nav_inactive');
-            }
-            if($('home_nav_contact').hasClass('home_nav_active')){
-                $('home_nav_contact').removeClass('home_nav_active');
-                $('home_nav_contact').addClass('home_nav_inactive');
-            }
-        }
-        //====================================================================\\
-        // Adjust Content                                                     \\
-        //====================================================================\\
-        // Initial Fade
-        $('home_nav_content').set('tween', { duration: 500 }).fade('out');
-        // Replace Content, then Fade back in on a timer.
-        setTimeout(function(){
-            // Replace Content
-            $('home_nav_content').innerHTML = "This is the test content of home. This is the test content of home. This is the test content of home. This is the test content of home. This is the test content of home. This is the test content of home. This is the test content of home. This is the test content of home. This is the test content of home. This is the test content of home.";
-            // Fade back in
-            $('home_nav_content').set('tween', { duration: 500 }).fade('in'); 
-        }, 500);
+        // Define replacementContent
+        replacementContent = "This is the test content of home. This is the test content of home. This is the test content of home. This is the test content of home. This is the test content of home. This is the test content of home. This is the test content of home. This is the test content of home. This is the test content of home. This is the test content of home.";
+
+        // Call switchTabs
+        switchTabs('home_nav_home', replacementContent);
     });
+
     /**************************************************************************\
      * ABOUT                                                                  *
     \**************************************************************************/
     $('home_nav_about').addEvent('click', function(){
-        //====================================================================\\
-        // Adjust Tab Classes                                                 \\
-        //====================================================================\\
-        if($('home_nav_about').hasClass('home_nav_active')){
-        }else{
-            $('home_nav_about').removeClass('home_nav_inactive');
-            $('home_nav_about').addClass('home_nav_active');
-            if($('home_nav_home').hasClass('home_nav_active')){
-                $('home_nav_home').removeClass('home_nav_active');
-                $('home_nav_home').addClass('home_nav_inactive');
-            }
-            if($('home_nav_resume').hasClass('home_nav_active')){
-                $('home_nav_resume').removeClass('home_nav_active');
-                $('home_nav_resume').addClass('home_nav_inactive');
-            }
-            if($('home_nav_contact').hasClass('home_nav_active')){
-                $('home_nav_contact').removeClass('home_nav_active');
-                $('home_nav_contact').addClass('home_nav_inactive');
-            }
-        }
-        //====================================================================\\
-        // Adjust Content                                                     \\
-        //====================================================================\\
-        // Initial Fade
-        $('home_nav_content').set('tween', { duration: 500 }).fade('out');
-        // Replace Content, then Fade back in on a timer.
-        setTimeout(function(){
-            // Replace Content
-            $('home_nav_content').innerHTML = "This is the test content of about. This is the test content of about. This is the test content of about. This is the test content of about. This is the test content of about. This is the test content of about. This is the test content of about. This is the test content of about. This is the test content of about. This is the test content of about.";
-            // Fade back in
-            $('home_nav_content').set('tween', { duration: 500 }).fade('in'); 
-        }, 500);
+        // Define replacementContent
+        replacementContent = "This is the test content of about. This is the test content of about. This is the test content of about. This is the test content of about. This is the test content of about. This is the test content of about. This is the test content of about. This is the test content of about. This is the test content of about. This is the test content of about.";
+
+        // Call switchTabs
+        switchTabs('home_nav_about', replacementContent);
     });
+
     /**************************************************************************\
      * RESUME                                                                 *
     \**************************************************************************/
     $('home_nav_resume').addEvent('click', function(){
-        //====================================================================\\
-        // Adjust Tab Classes                                                 \\
-        //====================================================================\\
-        if($('home_nav_resume').hasClass('home_nav_active')){
-        }else{
-            $('home_nav_resume').removeClass('home_nav_inactive');
-            $('home_nav_resume').addClass('home_nav_active');
-            if($('home_nav_home').hasClass('home_nav_active')){
-                $('home_nav_home').removeClass('home_nav_active');
-                $('home_nav_home').addClass('home_nav_inactive');
-            }
-            if($('home_nav_about').hasClass('home_nav_active')){
-                $('home_nav_about').removeClass('home_nav_active');
-                $('home_nav_about').addClass('home_nav_inactive');
-            }
-            if($('home_nav_contact').hasClass('home_nav_active')){
-                $('home_nav_contact').removeClass('home_nav_active');
-                $('home_nav_contact').addClass('home_nav_inactive');
-            }
-        }
-        //====================================================================\\
-        // Adjust Content                                                     \\
-        //====================================================================\\
-        // Initial Fade
-        $('home_nav_content').set('tween', { duration: 500 }).fade('out');
-        // Replace Content, then Fade back in on a timer.
-        setTimeout(function(){
-            // Replace Content
-            $('home_nav_content').innerHTML = "This is the test content of resume. This is the test content of resume. This is the test content of resume. This is the test content of resume. This is the test content of resume. This is the test content of resume. This is the test content of resume. This is the test content of resume. This is the test content of resume. This is the test content of resume.";
-            // Fade back in
-            $('home_nav_content').set('tween', { duration: 500 }).fade('in'); 
-        }, 500);
+        // Define replacementContent
+        replacementContent = "This is the test content of resume. This is the test content of resume. This is the test content of resume. This is the test content of resume. This is the test content of resume. This is the test content of resume. This is the test content of resume. This is the test content of resume. This is the test content of resume. This is the test content of resume.";
+
+        // Call switchTabs
+        switchTabs('home_nav_resume', replacementContent);
     });
+
     /**************************************************************************\
      * CONTACT                                                                *
     \**************************************************************************/
     $('home_nav_contact').addEvent('click', function(){
-        //====================================================================\\
-        // Adjust Tab Classes                                                 \\
-        //====================================================================\\
-        if($('home_nav_contact').hasClass('home_nav_active')){
-        }else{
-            $('home_nav_contact').removeClass('home_nav_inactive');
-            $('home_nav_contact').addClass('home_nav_active');
-            if($('home_nav_home').hasClass('home_nav_active')){
-                $('home_nav_home').removeClass('home_nav_active');
-                $('home_nav_home').addClass('home_nav_inactive');
-            }
-            if($('home_nav_resume').hasClass('home_nav_active')){
-                $('home_nav_resume').removeClass('home_nav_active');
-                $('home_nav_resume').addClass('home_nav_inactive');
-            }
-            if($('home_nav_about').hasClass('home_nav_active')){
-                $('home_nav_about').removeClass('home_nav_active');
-                $('home_nav_about').addClass('home_nav_inactive');
-            }
-        }
-        //====================================================================\\
-        // Adjust Content                                                     \\
-        //====================================================================\\
-        // Initial Fade
-        $('home_nav_content').set('tween', { duration: 500 }).fade('out');
-        // Replace Content, then Fade back in on a timer.
-        setTimeout(function(){
-            // Replace Content
-            $('home_nav_content').innerHTML = "This is the test content of contact. This is the test content of contact. This is the test content of contact. This is the test content of contact. This is the test content of contact. This is the test content of contact. This is the test content of contact. This is the test content of contact. This is the test content of contact. This is the test content of contact.";
-            // Fade back in
-            $('home_nav_content').fade(1); 
-            $('home_nav_content').set('tween', { duration: 500 }).fade('in'); 
-        }, 500);
+        // Define replacementContent
+        replacementContent = "This is the test content of contact. This is the test content of contact. This is the test content of contact. This is the test content of contact. This is the test content of contact. This is the test content of contact. This is the test content of contact. This is the test content of contact. This is the test content of contact. This is the test content of contact.";
+
+        // Call switchTabs
+        switchTabs('home_nav_contact', replacementContent);
     });
 }
