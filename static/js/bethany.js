@@ -22,23 +22,22 @@ function centralInit(){
 // switchTabs                                 \\
 //============================================\\
 function switchTabs(tabName, newContent){
-    var activateArray = [];
-    var deactivateArray = ['home_nav_home', 'home_nav_about', 'home_nav_resume', 'home_nav_contact'];
+    var activateArray = [], deactivateArray = [];
 
     if(tabName === 'home_nav_home'){
         activateArray.push('home_nav_home');
-        deactivateArray.pop('home_nav_home');
+        deactivateArray = ['home_nav_about', 'home_nav_resume', 'home_nav_contact'];
     }else if(tabName === 'home_nav_about'){
         activateArray.push('home_nav_about');
-        deactivateArray.pop('home_nav_about');
+        deactivateArray = ['home_nav_home', 'home_nav_resume', 'home_nav_contact'];
     }else if(tabName === 'home_nav_resume'){
         activateArray.push('home_nav_resume');
-        deactivateArray.pop('home_nav_resume');
+        deactivateArray = ['home_nav_about', 'home_nav_home', 'home_nav_contact'];
     }else if(tabName === 'home_nav_contact'){
         activateArray.push('home_nav_contact');
-        deactivateArray.pop('home_nav_contact');
+        deactivateArray = ['home_nav_about', 'home_nav_resume', 'home_nav_home'];
     }
-    
+
     // Activate
     var activateLength = activateArray.length;
     for(var i=0; i<activateLength; i++){
